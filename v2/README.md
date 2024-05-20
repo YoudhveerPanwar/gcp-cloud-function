@@ -44,3 +44,18 @@ curl localhost:8080 \
 3. Send this message from cron schedular to pubsub to stop or start sql instance accordingly
 
 
+
+* [http](http/)
+
+## HttpBased trigger
+
+Now run http based function for stopping sql instance,
+```
+curl -m 70 -X POST https://<functionURI> \
+-H "Authorization: bearer $(gcloud auth print-identity-token)" \
+-H "Content-Type: application/json" \
+-d '{
+  "action": "stopInstance"
+}'
+
+```
