@@ -14,6 +14,9 @@ environment.
 * [Cloud Pub/Sub](pubsub/)
 This sample will stop/start cloud sql instance using cloud function based on pubsub trigger. You can trigger pubsub message as startInstance or stopInstance (using cloud schedular or some other script/api).
 
+* [http](http/)
+This sample will stop/start cloud sql instance using cloud function based on http trigger. You can trigger http post request with appropriate request body mentioned at below
+
 ## Running Functions Locally
 The [Java Functions Framework](https://github.com/GoogleCloudPlatform/functions-framework-java)
 Maven plugin (`com.google.cloud.functions:function-maven-plugin`) allows you to run Java Cloud
@@ -38,15 +41,6 @@ curl localhost:8080 \
 
 ```
 
-## Running Functions on google project
-1. Make sure you deployed the function with service account having appropriate permissions
-2. This function will accepth pubsub message from a trigger as startInstance or stopInstance
-3. Send this message from cron schedular to pubsub to stop or start sql instance accordingly
-
-
-
-* [http](http/)
-
 ## HttpBased trigger
 
 Now run http based function for stopping sql instance,
@@ -59,3 +53,9 @@ curl -m 70 -X POST https://<functionURI> \
 }'
 
 ```
+
+## Running Functions on google project
+1. Make sure you deployed the function with service account having appropriate permissions
+2. This function will accepth pubsub message from a trigger as startInstance or stopInstance
+3. Send this message from cron schedular to pubsub to stop or start sql instance accordingly
+

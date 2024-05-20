@@ -12,6 +12,7 @@ environment.
 ## Samples
 
 * [Cloud Pub/Sub](pubsub/)
+* [http](http/)
  
 
 ## Running Functions Locally
